@@ -109,3 +109,65 @@ body {
   background: linear-gradient(135deg, #e0eafc, #cfdef3);
 }
 
+
+/* Wishlist Form */
+.wish-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 25px auto 35px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease-in-out;
+  max-width: 500px;
+  padding-left: 0px;
+}
+
+/* Hover lift effect */
+.wish-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* 🖊️ Input box */
+.wish-form input {
+  flex: 1;
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  box-shadow: inset 0px 4px 8px rgba(0,0,0,0.08);
+  transition: 0.3s ease-in-out;
+}
+
+.wish-form input:focus {
+  background: linear-gradient(135deg, #d4fc79, #96e6a1);
+  box-shadow: 0px 0px 10px rgba(0, 150, 136, 0.4);
+}
+
+/* ✨ Add Wish button */
+.wish-form button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  color: #2d3436;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect on button */
+.wish-form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #fccb90, #d57eeb);
+  color: white;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
