@@ -3,7 +3,7 @@
  <form class="row mt-3 wish-form">
   <div class="col-sm-6">
     <label class="visually-hidden" for="specificSizeInputName">Wish</label>
-    <input type="text" class="form-control" [(ngModel)]="newWishText" placeholder="Enter your wish...">
+    <input type="text" name="newWishText" class="form-control" [(ngModel)]="newWishText" placeholder="Enter your wish...">
   </div>
   <div class="col-auto">
     <button
@@ -14,18 +14,30 @@
   </div>
 </form>
 
-  <!-- ngif is a structular directive it changes structure of 
-   the element based on the condition -->
-  <div class="no-wish" *ngIf="items.length === 0; else showItems">
+<div class="row mt-3">
+  <div class="col-sm-5">
+    <select class="form-select"
+    [(ngModel)]="listFilter"
+    >
+      <option value="0">All</option>
+      <option value="1">Unfulfilled</option>
+      <option value="2">Fulfilled</option>
+    </select>
+  </div>
+</div>
+
+ <div class="row mt-3">
+
+  <!-- ngif is a structular directive it changes structure of the element based on the condition -->
+  <div class="no-wish" *ngIf="visibleItems.length === 0; else showItems">
     There are no wishes in your wish list.
   </div>
 
   <ng-template #showItems>
   <ul class="wish-list">
-    <!-- ngfor also a structular directive for loop and we can't have 
-     2 struc diretives on one componet remember !! li - ngif ngfor both can't have-->
 
-    <li *ngFor="let item of items; index as i">
+    <!-- ngfor also a structular directive for loop and we can't have 2 struc diretives on one componet remember !! li - ngif ngfor both can't have-->
+    <li *ngFor="let item of visibleItems; index as i">
       <div class="form-check">
         <label class="form-check-label">
           <input class="checkbox" type="checkbox" 
@@ -34,9 +46,15 @@
           />
           {{ item.wishText }}
         </label>
+
+    <!-- Delete button -->
+    <button class="delete-btn" (click)="deleteWish(i)">
+      Delete
+    </button>
       </div>
     </li>
   </ul>
   </ng-template>
+ </div>
   
 </div>
