@@ -218,3 +218,83 @@ body {
   box-shadow: 0px 0px 8px rgba(0, 150, 136, 0.35);
   color: #1b4332;
 }
+
+/* 🌙 Dark Mode */
+.container.dark {
+  background: rgba(30, 30, 30, 0.9);
+  color: #f1f1f1;
+  box-shadow: 0px 8px 25px rgba(36, 35, 35, 0.08);
+}
+
+/* Dark mode list items */
+.container.dark .wish-list li {
+  background: linear-gradient(135deg, #434343, #1a1a1a);
+  color: #f1f1f1;
+}
+
+.container.dark .wish-list li:hover {
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Completed item look */
+.container.dark .wish-list li.completed {
+  background: linear-gradient(135deg, #2e2e2e, #000000);
+  color: #90ee90; 
+  text-decoration: line-through;
+}
+
+/* Add Wish button */
+.container.dark .wish-form button {
+  background: linear-gradient(135deg, #555, #222);
+  color: #f1f1f1;
+}
+
+.container.dark .wish-form button:hover {
+  background: linear-gradient(135deg, #888, #333);
+  color: #fff;
+}
+
+/* Delete button */
+.container.dark .delete-btn {
+  background: linear-gradient(135deg, #3a1c1c, #661111);
+  color: #ff8a80;
+}
+
+.container.dark .delete-btn:hover {
+  background: linear-gradient(135deg, #b71c1c, #880e4f);
+  color: #fff;
+}
+
+/* Dropdown filter */
+.container.dark .form-select {
+  background: #2e2e2e;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+.container.dark .form-select:focus {
+  background: linear-gradient(135deg, #333, #111);
+  box-shadow: 0px 0px 8px rgba(0, 255, 136, 0.35);
+  color: #90ee90;
+}
+
+/* Toggle button style */
+.mode-toggle button {
+  margin: 20px auto;
+  display: block;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  color: #2d3436;
+  font-weight: 600;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.mode-toggle button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #fccb90, #d57eeb);
+  color: #fff;
+}

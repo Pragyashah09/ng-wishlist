@@ -1,4 +1,11 @@
-<div class="container">
+<div class="mode-toggle">
+  <button (click)="toggleDarkMode()">
+    {{ isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode' }}
+  </button>
+</div>
+
+
+<div class="container" [class.dark]="isDarkMode">
 
  <form class="row mt-3 wish-form">
   <div class="col-sm-6">
@@ -37,15 +44,15 @@
   <ul class="wish-list">
 
     <!-- ngfor also a structular directive for loop and we can't have 2 struc diretives on one componet remember !! li - ngif ngfor both can't have-->
-    <li *ngFor="let item of visibleItems; index as i">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="checkbox" type="checkbox" 
-          [checked]="item.isComplete" [attr.data-index]="i" 
-          (click)="toggleItem(item)"
-          />
-          {{ item.wishText }}
-        </label>
+    <li *ngFor="let item of visibleItems; index as i" [class.completed]="item.isComplete">
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="checkbox" type="checkbox"
+        [checked]="item.isComplete" [attr.data-index]="i"
+        (click)="toggleItem(item)"
+         />
+      {{ item.wishText }}
+    </label>
 
     <!-- Delete button -->
     <button class="delete-btn" (click)="deleteWish(i)">
